@@ -51,19 +51,21 @@
 	      <td>아이디</td>
 	      <td>이름</td>
 	      <td>이메일</td>
-	      <td>회원등급</td>
+	      <td>포인트</td>
 	      <td>가입일</td>
 	    </tr>
 	    <tr>
 	      <td colspan="5">
-	        [<a href="/Users/WriteForm">사용자 추가</a>]	      
+	        [<a href="/Users/WriteForm">사용자 추가</a>]
 	      </td>
 	    </tr>
 	    
 	    <c:forEach  var="userVo"  items="${ userList }" >
 	    <tr>
 	      <td>${ userVo.userid    }</td>
-	      <td>${ userVo.username  }</td>
+	      <td>
+	          <a href="/Users/View?userid=${ userVo.userid }">${ userVo.username  }</a>
+	      </td>
 	      <td>${ userVo.email   }</td>	      
 	      <td>${ userVo.upoint   }</td>	      
 	      <td>${ userVo.indate   }</td>	      
