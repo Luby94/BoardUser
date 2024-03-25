@@ -17,5 +17,9 @@ public interface UserMapper {
 	// UserVo getUser(UserVo userVo);		// getUser 함수가 userMapper.xml 에 있어야함
 	HashMap<String, Object> getUser(UserVo userVo);		// userMapper.xml 內 <resultMap id="getUserMap" type="java.util.HashMap">
 	// type 이 HashMap 이기때문에 여기서도 UserVo 로 받을게 아니라 HashMap 으로 받아야함
+
+	void updateUser(UserVo userVo);
+
+	void deleteUser(UserVo userVo);
 	
 }

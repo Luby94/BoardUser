@@ -105,5 +105,35 @@ public class UserController {
 		return mv;
 	}
 	
+	//  /Users/Update
+	@RequestMapping("/Update")
+	public ModelAndView update( UserVo userVo ) {
+		
+		log.info( "userVo : {}", userVo );
+		
+		// 수정
+		
+		userMapper.updateUser( userVo );		// 수정한 정보를 담고있는 userVo 를 담아 넘길 것
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("redirect:/Users/List");
+		
+		return mv;
+	}
+	
+	//  /Users/Delete?userid=fdsafgdaf
+	@RequestMapping("/Delete")
+	public ModelAndView delete( UserVo userVo ) {
+		
+		// 삭제
+		userMapper.deleteUser( userVo );
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Users/List");
+		
+		return mv;
+	}
+	
 	
 }

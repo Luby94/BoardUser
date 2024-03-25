@@ -73,5 +73,34 @@
             SYSDATE
           )  
   </insert>
+  
+  <update id="updateUser">
+  	
+  	UPDATE     TUSER
+  	   SET     USERNAME = #{ username }
+  	         , PASSWD   = #{ passwd }
+  	         , EMAIL    = #{ email }
+  	         , UPOINT   = #{ upoint }
+  	 WHERE     USERID = #{ userid }
+  	
+  </update>  
+  
+  <delete id="deleteUser">
+  	
+  	DELETE  FROM  TUSER
+  	 WHERE  USERID = #{ userid }
+  	
+  </delete>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+

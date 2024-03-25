@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,9 +66,18 @@
 	 <tr>
 	   <td>포인트</td>
 	   <td>
-	   <c:if test="${ vo.upoint != 0 }">
+	   <%-- <c:if test="${ vo.upoint ne 0 }">	<!-- 3번줄 명령 필수  -->
 	   ${ vo['upoint'] }
-	   </c:if>
+	   </c:if> --%>
+	   
+	   <c:choose>
+	   	<c:when test="${ vo.upoint ne 0 }">
+	   		${ vo['upoint'] }
+	   	</c:when>
+	   <c:otherwise>
+	   	<span style="color: red">없음</span>
+	   </c:otherwise>
+	   </c:choose>
 	   </td>
 	   <%-- <td>${ vo['upoint'] + 1000 }</td> --%>
 	 </tr>

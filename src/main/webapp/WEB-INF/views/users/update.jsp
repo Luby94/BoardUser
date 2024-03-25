@@ -37,40 +37,46 @@
 <body>
   <main>
 	<h2>사용자 수정</h2>
-	<form action="/Users/Write" method="POST">
+	<form action="/Users/Update" method="POST">
 	<table>
 	 <tr>
 	   <td>아이디</td>
-	   <td><input type="text" name="userid" placeholder="${vo.userid}" /></td>
+	   <%-- <td><input type="text" name="userid" placeholder="${vo.userid}" /></td> --%>
+	   <td><input type="text" name="userid" value="${vo.userid}" /></td>
 	 </tr>
 	 <tr>
 	   <td>비밀번호</td>
-	   <td><input type="password" name="passwd" /></td>
+	   <td><input type="password" name="passwd" value="${vo.passwd}" /></td>
 	 </tr>
 	 <tr>
 	   <td>이름</td>
-	   <td><input type="text" name="username" placeholder="${vo.username}" /></td>
+	   <td><input type="text" name="username" value="${vo.username}" /></td>
 	 </tr>
 	 <tr>
 	   <td>이메일</td>
-	   <td><input type="text" name="email" placeholder="${vo.email}" /></td>
+	   <td><input type="text" name="email" value="${vo.email}" /></td>
 	 </tr>
 	 <tr>
 	   <td>포인트</td>
-	   <td><input type="text" value="1000" readonly /></td>
+	   <td><input type="text" name="upoint" value="${ vo.upoint }" /></td>
 	 </tr><!-- 포인트 가입일 : 날라가면 안되는 정보 , name 뺌 -->
 	 <tr>
 	   <td>가입일</td>
-	   <td><input type="text" value="${ vo.indate }" readonly /></td>
+	   <%-- <td><input type="text" value="${ vo.indate }" readonly /></td> --%>
+	   <td><input type="text" value="${ now }" readonly /></td>
 	 </tr>
 	 <tr>
-	   <td colspan="2">
+	   <%-- <td colspan="2">
 	     <a class="btn btn-primary btn-sm" role="button" 
-	     href="/Users/UpdateForm?userid=${ vo.userid }">수정</a>
+	     href="/Users/UpdateForm?userid=${ vo.userid }">수정</a>	<!-- 수정 누르면 /Users/Update 에 감(40라인) -> Controller 작업 -->
 	     <a class="btn btn-primary btn-sm" role="button" 
 	     href="/Users/List">회원목록</a>
 	     <a class="btn btn-primary btn-sm" role="button" 
 	     href="/">Home</a>
+	   </td> --%>
+	   <td colspan="2">
+	    <input type="submit" value="수정" />
+	    <input type="button" value="목록" id="goList" />
 	   </td>
 	 </tr>
 	
