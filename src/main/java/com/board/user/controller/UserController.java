@@ -39,14 +39,14 @@ public class UserController {
 	@RequestMapping("/WriteForm")
 	public ModelAndView write() {
 		
-		ModelAndView mv = new ModelAndView();
-		LocalDateTime today  = LocalDateTime.now();
-		String now = today.format(DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss:SSSS"));
-		DayOfWeek wkday = today.getDayOfWeek();
-		now += " " + wkday;
+		ModelAndView   mv     = new ModelAndView();
+		LocalDateTime  today  = LocalDateTime.now();
+		String         now    = today.format(DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss:SSSS"));
+		DayOfWeek      wkday  = today.getDayOfWeek();
+		               now    += " " + wkday;
 		mv.addObject( "now", now );
 		mv.setViewName("users/write");
-		return mv;
+		return         mv;
 	}
 	
 	//  /Users/Write

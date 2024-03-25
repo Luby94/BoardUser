@@ -10,7 +10,8 @@
     <result property="indate" column="indate" />
   </resultMap>
 
-  <select id="getUserList" resultType="com.board.user.domain.UserVo">
+  <!-- <select id="getUserList" resultType="com.board.user.domain.UserVo"> -->
+  <select id="getUserList" resultMap="getUserList">
     
     SELECT     USERID,
                USERNAME,
@@ -34,13 +35,17 @@
             USERID,
             PASSWD,
             USERNAME,
-			EMAIL
+			EMAIL,
+			UPOINT,
+			INDATE
           )
         VALUES (
             #{ userid   },
             #{ passwd },
             #{ username  },
-            #{ email  }
+            #{ email  },
+            1000,
+            SYSDATE
           )  
   </insert>
 
